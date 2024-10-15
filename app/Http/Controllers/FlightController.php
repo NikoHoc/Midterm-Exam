@@ -22,9 +22,11 @@ class FlightController extends Controller
     public function showTickets ($id) {
         $flight = Flight::find($id);
         $tickets = Ticket::where('flight_id', $id)->get();
+        $boarded = Ticket::where('is_boarding', true)->count();
         return view('flights.tickets.index', [
             'flight' => $flight,
             'tickets' => $tickets,
+            'boarded' => $boarded
         ]);
     }
 
