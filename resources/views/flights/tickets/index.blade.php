@@ -82,6 +82,11 @@
     </div>
 </div>
 
+<div class="container mx-auto px-4 mt-5 flex justify-center mb-10">
+    <div class="">
+        <a href="{{ route('flights') }}" class="btn btn-primary">Back</a>
+    </div>
+</div>
 @endsection
 
 @section('library-js')

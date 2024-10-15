@@ -13,7 +13,28 @@ class TicketController extends Controller
     // Route::delete('/ticket/delete/{ticket:id}', [TicketController::class, 'deleteTicket'])->name('ticket.delete');
 
     public function submitTicket (Request $request) {
+        $validatedData = $request->validate([
+            'flight_id' => 'required|exists:flights,id',
+            'passenger_name' => 'required|string',
+            'passenger_phone' => 'required|string|max:14',
+            'seat_number' => 'required|string|max:3',
+        ]);
 
+        if ($validatedData) {
+            Ticket::create([
+                'flight_id' => $validatedData['flight_id'],
+                'passenger_name' => $validatedData['passenger_name'],
+                'passenger_phone' => $validatedData['passenger_phone'],
+                'seat_number' => $validatedData['seat_number']
+            ]);
+
+            FacadesSession::flash('message', 'Berhasil book tiket!');
+            FacadesSession::flash('alert-class', 'success');
+        } else {
+            FacadesSession::flash('message', 'Book tiket gagal');
+            FacadesSession::flash('alert-class', 'success');
+        }
+        return redirect()->back();
     }
 
     public function board ($id) {
