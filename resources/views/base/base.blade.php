@@ -7,12 +7,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite('resources/css/app.css')  
     @yield('library-css')
-    <title>Document</title>
+    <title>Petra Airlines</title>
 </head>
 <body>
     @include('includes.navbar')
 
-    <div class="w-full">
+    <div class="w-full mb-10">
         @yield('content')
     </div>
 

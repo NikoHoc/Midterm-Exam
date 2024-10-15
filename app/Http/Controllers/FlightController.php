@@ -28,7 +28,7 @@ class FlightController extends Controller
         ]);
     }
 
-    public function showBookTicket ($id) {
+    public function showBookFlight ($id) {
         $flight = Flight::find($id);
         return view('flights.book.index', [
             'flight' => $flight

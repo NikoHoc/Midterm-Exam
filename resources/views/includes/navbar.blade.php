@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-100 shadow-2xl">
     <div class="navbar-start">
       <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -18,15 +18,15 @@
         <ul
           tabindex="0"
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li><a class="btn btn-ghost text-xl">Flights</a></li>
+          <li><a href="{{ route('flights') }}" class="btn btn-ghost text-xl">Flights</a></li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl">Airlines</a>
+      <a href="{{ route('flights') }}" class="btn btn-ghost text-xl">Airlines</a>
     </div>
     <div class="navbar-center hidden lg:flex">
-        <a class="btn btn-ghost text-xl">Airplane Booking System</a>
+        <a href="{{ route('flights') }}" class="btn btn-ghost text-xl">Airplane Booking System</a>
     </div>
     <div class="navbar-end">
-      <a class="btn">Home</a>
+      <a href="{{ route('flights') }}" class="btn">Home</a>
     </div>
   </div>
