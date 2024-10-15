@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $this->call(FlightSeeder::class);
+        $this->call(TicketSeeder::class);
     }
 }
